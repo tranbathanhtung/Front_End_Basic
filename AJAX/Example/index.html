@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Crash Course | Ajax</title>
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<style>
+		body{
+			font-size: 17px;
+			font-family: arial;
+			background: #f4f4f4;
+			line-height: 1.5em;
+		}
+		header{
+			background:#333;
+			color:#fff;
+			padding:20px;
+			text-align: center;
+			border-bottom: 4px #000 solid;
+			margin-bottom: 10px;
+		}
+		#container{
+			width:90%;
+			margin:auto;
+			padding:10px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>jQuery Crash Course | Ajax</h1>
+	</header>
+	<div id="container">
+          <div class="result">
+            <ul id="user">
+
+            </ul>
+          </div>
+          <h3>Add Post</h3>
+          <form class="postForm" action="index.html" method="post">
+            <input type="text" name="" value="" id="title" placeholder="Title">
+            <textarea name="name" placeholder="Body" id="body" rows="8" cols="80"></textarea>
+            <input type="submit" name="" value="submit">
+          </form>
+	</div>
+
+	<script>
+		$(document).ready(function(){
+          /*$('.result').load('test.html',function(responseTxt, statusTxt, xhr){
+            if(statusTxt =="success"){
+              alert('It was fine');
+            }
+            else if(statusTxt == "error"){
+              alert('Error:'+ xhr.statusText)
+            }
+          });*/
+          /*
+          $.get('test.html',function(){
+            $('.result').html(data);
+
+          });
+          */
+        /*  $.getJSON('users.json',function(data) {
+            $.each(data, function(i, user){
+              $('#user').append('<li>'+user.firstName+'</li>')
+
+            })
+          });*/
+          /*
+          $.ajax({
+            method:'GET',
+            url:'https://jsonplaceholder.typicode.com/posts',
+            dataType:'json'
+          }).done(function(data){
+            $.map(data, function(post, i){
+              $('.result').append('<h3>'+post.title+'</h3><p>'+post.body+'</p>')
+            });
+          });*/
+
+    });
+    </script>
+</body>
+</html>

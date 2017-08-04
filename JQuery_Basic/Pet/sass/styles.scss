@@ -1,0 +1,197 @@
+@import "normalize";
+@import "skeleton";
+@import "variables";
+
+body {
+  font-family: $primary-font-stack;
+  color: $black;
+  background-color: lighten($accent, 40%);
+}
+
+p {
+  font-family: $primary-font-stack;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: $accent;
+  text-decoration: none;
+  &:hover,
+  &:active,
+  &:focus { color: darken($accent, 10%); }
+  input[type="checkbox"] + & {
+    position: relative;
+    top: 1px;
+    left: 3px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+  font-family: $secondary-font-stack;
+}
+
+button {
+  background-color: $accent;
+  border-color: $accent;
+  color: #fff;
+  transition: background 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+  margin-bottom: 0;
+  margin-top: 20px;
+  text-transform: capitalize;
+  letter-spacing: 0;
+  font-size: 14px;
+  height: 44px;
+  line-height: 44px;
+  &[disabled="true"], &[disabled="true"]:hover {
+    background-color: $white;
+    color: $grey;
+    border-color: $grey;
+  }
+  &.full { width: 100%; }
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: darken($accent, 10%);
+    border-color: darken($accent, 10%);
+    color: #fff;
+  }
+}
+
+#add-pet {
+  @media screen and (max-width: 680px) { width: 100%; }
+}
+
+header {
+  background-color: $accent;
+  margin-bottom: 80px;
+}
+
+.logo {
+  margin: 0;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  img {
+    height: 100px;
+  }
+}
+
+nav {
+  @media screen and (max-width: 767px) { width: 95% !important; }
+  ul {
+    list-style: none;
+    @media screen and (min-width: 768px) {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+  }
+  li {
+    font-family: $secondary-font-stack;
+    @media screen and (max-width: 767px) {
+      &:first-child { float: left; }
+      &:last-child { float: right; }
+    }
+    @media screen and (min-width: 768px) {
+      margin-left: -10px;
+    }
+  }
+  a {
+    color: #fff;
+    display: inline-block;
+    padding: 16px 16px 20px;
+    transition: background 200ms ease-in-out;
+    &:hover,
+    &:active {
+      background-color: darken($accent, 10%);
+      color: #fff;
+    }
+  }
+  ul, li {
+    margin-bottom: 0;
+  }
+}
+
+.page-header {
+  color: darken($accent, 20%);
+  padding: 0 20px;
+  @media screen and (max-width: 680px) {
+    font-size: 24px;
+  }
+  @media screen and (min-width: 681px) {
+    margin-bottom: 60px;
+    font-size: 38px;
+  }
+}
+
+.card {
+  border-radius: 6px;
+  background-color: #fff;
+  border: solid 2px lighten($accent, 32%);
+  padding: 20px;
+  cursor: pointer;
+  @media screen and (max-width: 680px) { margin-bottom: 20px; }
+  @media screen and (min-width: 681px) { margin-bottom: 40px; }
+  &.selected {
+    background-color: lighten($lt-brown, 30%);
+    border: solid 2px lighten($lt-brown, 10%);
+  }
+  img {
+    border-radius: 4px;
+    margin-bottom: 12px;
+  }
+  p {
+    margin-bottom: 0;
+  }
+}
+
+form {
+  border-radius: 6px;
+  background-color: #fff;
+  border: solid 2px lighten($accent, 32%);
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+input[type="text"], select, textarea {
+  border: solid 2px #ddd;
+  &:focus {
+    border: solid 2px $accent;
+  }
+}
+
+footer {
+  text-align: center;
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+
+#posted-pets {
+  section:nth-child(2n+1) {
+    margin-left: 0;
+    clear: both;
+  }
+  .card {
+    position: relative;
+    cursor: default;
+    .close {
+      color: lighten($accent, 15%);
+      font-size: 28px;
+      position: absolute;
+      line-height: 1;
+      top: 10px;
+      right: 14px;
+      cursor: pointer;
+      transition: color 200ms ease-in-out;
+      &:hover,
+      &:active {
+        color: $accent
+      }
+    }
+  }
+}
